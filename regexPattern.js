@@ -1,15 +1,12 @@
 const prompt = require('prompt-sync')();
 
-const PINCODE_REGEX_PATTERN = RegExp("^[^a-zA-z][0-9]{6}$");
-<<<<<<< HEAD
-const EMAIL_REGEX_PATTERN = RegExp("^[a-zA-Z0-9]{3}$");
-=======
+const PINCODE_REGEX_PATTERN = RegExp("^[0-9]{6}[^a-zA-z@]$");
 const EMAIL_REGEX_PATTERN = RegExp("^[a-zA-Z0-9]+@$");
 
->>>>>>> UC2_Email
 // UC1: Create a regex pattern to validate PIN code 400088.
 // UC2: Create a regex pattern to validate PIN code A400088.
-var pincode = parseInt(prompt("Enter pincode: "));
+// UC3: Create a regex pattern to validate PIN code 400088B.
+var pincode = prompt("Enter pincode: ");
 try{
     if(!PINCODE_REGEX_PATTERN.test(pincode)) throw "Invalid pincode"
         console.log("Valid pincode");
